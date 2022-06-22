@@ -21,6 +21,7 @@ WRONG_QUESTIONS_PATH = r'wrong_questions.txt'
 CHROME_CHROME_PATH = None
 CHROME_TIMEOUT = 15
 
+
 # adb devices 命令得到的手机序列号
 ADB_DEVICE_SERIAL = "xxxxxxxx"
 

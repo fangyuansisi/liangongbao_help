@@ -5,15 +5,22 @@ import traceback
 import time
 from LgbConfig import ACCOUNT
 
+
 class Logger(object):
     def __init__(self, filename="Default.log"):
         self.terminal = sys.stdout
         self.log = open(filename, "a")
+
     def write(self, message):
         self.terminal.write(message)
         self.log.write(message)
+
     def flush(self):
         pass
+
+    def __getattr__(self, attr):
+        return getattr(self.terminal, attr)
+
 
 def parser_arguments():
     """
@@ -33,6 +40,7 @@ def parser_arguments():
 
 if __name__ == '__main__':
     sys.stdout = Logger('info.log')
+    sys.stderr = sys.stdout
     print('+++++++++++++++++++++++++++++++++++++++++++++')
     print(time.strftime('%Y-%m-%d %H:%M:%S'))
     parser = parser_arguments()
@@ -58,7 +66,6 @@ if __name__ == '__main__':
             app.main(user, passwd)
         except:
             traceback.print_exc()
-            print("还继续答题嘛？ q退出")
-            if input().upper() == 'Q':
+            if input("还继续答题嘛？ q退出:").upper() == 'Q':
                 break
     print("全部用户答题结束！！！")

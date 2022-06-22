@@ -164,6 +164,8 @@ class Visualization:
             while retry_flag:
                 retry_flag = False
                 t_str = input("没有找到答案>>>>>>>>>>>>手动输入答案:").upper()
+                if not t_str:
+                    retry_flag = True
                 for v in t_str:
                     if ord(v)-64 > len(answerOptions):
                         retry_flag = True
