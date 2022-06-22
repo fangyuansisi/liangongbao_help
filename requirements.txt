@@ -1,0 +1,10 @@
+ddddocr
+jieba
+numpy
+opencv_python
+pandas
+Pillow
+pytesseract
+requests
+selenium
+webdriver_manager
