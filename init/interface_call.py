@@ -71,6 +71,7 @@ class InterfaceCall:
         content = ques.get("content")
         answerOptions = ques.get("options")
         _, answer_ = self.find_answers.get_result(quesTypeStr, content, answerOptions)
+        print("running:", quesid_, quesTypeStr, content, answerOptions, answer_)
         if all([quesid_, answer_]):
             return quesid_, answer_
         else:

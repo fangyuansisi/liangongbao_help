@@ -3,6 +3,7 @@ import traceback
 import ddddocr
 import numpy as np
 import base64
+import random
 
 from config.url_conf import URLS
 from utils.http_utils import HTTPClient
@@ -10,6 +11,7 @@ from utils.find_ansers import FindAnswers
 from utils.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from LgbConfig import CHROME_CHROME_PATH, CHROME_TIMEOUT
+from LgbConfig import MIN_TIME, MAX_TIME
 
 
 class Visualization:
@@ -34,8 +36,9 @@ class Visualization:
         time.sleep(2)  # 必须等待html源码完成更新在读取,希望更改
 
     def exec_script_click(self, obj_elem, pos):
+        time.sleep(0.1)
         try:
-            if pos > 0:
+            if pos >= 0:
                 self.browser.execute_script(
                     "arguments[0].click();", obj_elem[pos])
             else:
@@ -138,6 +141,10 @@ class Visualization:
                     By.CLASS_NAME, "submission").find_element(By.XPATH, ".//a")
                 self.exec_script_click(submit, -1)
             self.wait_get_url_done()
+            tips = self.browser.find_element(By.CLASS_NAME, "Tips").find_element(By.CLASS_NAME, "Continue").find_element(By.XPATH, ".//a")
+            self.exec_script_click(tips, -1)
+            self.wait_get_url_done()
+            time.sleep(random.randint(MIN_TIME, MAX_TIME))
 
     def get_correct_answer(self, question_type, topic, question_answer):
         quesid_ = ''
@@ -149,6 +156,7 @@ class Visualization:
                          for key in question_answer]
         answer_, _ = self.find_answers.get_result(
             quesTypeStr, content, answerOptions)
+        print("running:", quesid_, quesTypeStr, content, answerOptions, answer_)
         if all([quesid_, answer_]):
             return quesid_, answer_
         else:
