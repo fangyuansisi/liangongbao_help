@@ -8,3 +8,4 @@ env.slave.py
 env.docker.py
 docker-compose.yml
 wrong_questions.txt
+*.log

@@ -2,8 +2,18 @@
 import argparse
 import sys
 import traceback
+import time
 from LgbConfig import ACCOUNT
 
+class Logger(object):
+    def __init__(self, filename="Default.log"):
+        self.terminal = sys.stdout
+        self.log = open(filename, "a")
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+    def flush(self):
+        pass
 
 def parser_arguments():
     """
@@ -22,6 +32,9 @@ def parser_arguments():
 
 
 if __name__ == '__main__':
+    sys.stdout = Logger('info.log')
+    print(time.strftime('%Y-%m-%d %H:%M:%S'))
+    print('+++++++++++++++++++++++++++++++++++++++++++++')
     parser = parser_arguments()
     args = parser.parse_args(sys.argv[1:])
     if args.interface_call:
@@ -46,3 +59,4 @@ if __name__ == '__main__':
             traceback.print_exc()
             if input("还继续答题嘛？").upper() == 'Q':
                 break
+        break
