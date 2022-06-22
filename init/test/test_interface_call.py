@@ -1,0 +1,4 @@
+login = {'data': {'mobile': 'xxxxxxxxxxx', 'userType': 2, 'memberId': 'xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxxx-xxxxxxxxxxx', 'token': 'xxxxxxxxxxx'}, 'message': '成功', 'status': 20000}
+start = {"result":{"code":9,"msg":"您当天的答题次数已用完，请明天再试~"}}
+answer_right = {"result":{"msg":"成功"},"data":{"isRight":True,"answeredOptions":["亲自为职工讲授安全生产培训课程"],"ques":{"quesNo":2,"options":["归集","共享","应用","公开"],"quesTypeStr":"多选题","quesId":"xxxxxxxxxxx","content":"负有安全生产监督管理职责的部门应当加强对生产经营单位行政处罚信息的及时（  ）。","quesType":2},"rightOptions":["亲自为职工讲授安全生产培训课程"]}}
+answer_right2 = {"result":{"msg":"成功"},"data":{"answeredOptions":["科学严谨"],"ques":{"quesNo":11,"options":["检查人员","检查人员和被检查单位的负责人","被检查单位负责人"],"quesTypeStr":"单选题","quesId":"xxxxxxxxxxx","content":"安全生产监督检查人员应当将检查的时间、地点、内容、发现的问题及其处理情况，作出书面记录，并由（  ）签字。","quesType":1},"rightOptions":["科学严谨","依法依规","实事求是","注重实效"]}}
