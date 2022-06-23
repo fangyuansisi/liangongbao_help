@@ -162,6 +162,7 @@ class FindAnswers:
                 full_paper_match.append([stdout_rate[1], t_str])
         os.system("cls")
         print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n')
+        print('采集题型:', quesTypeStr)
         print('采集题目:', content)
         print('采集答案:', answerOptions)
         if full_match:
