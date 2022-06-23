@@ -50,11 +50,11 @@ class FindAnswers:
 
     def get_result(self, quesTypeStr, content, answerOptions):
         find_option, find_opt_text = self._find_excel(quesTypeStr, content, answerOptions)
-        # if find_option and find_opt_text:
-        #     return find_option, find_opt_text
+        if find_option and find_opt_text:
+            return find_option, find_opt_text
         find_option, find_opt_text = self._find_answer(quesTypeStr, content, answerOptions)
-        # if find_option and find_opt_text:
-        #     return find_option, find_opt_text
+        if find_option and find_opt_text:
+            return find_option, find_opt_text
         delimiter = "######"
         text = quesTypeStr + delimiter + content + delimiter + str(answerOptions)
         self.collection_wrong_questions(text)  # 没找到得题自动加入错题本

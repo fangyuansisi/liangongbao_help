@@ -5,13 +5,13 @@ ACCOUNT = [
 ]
 
 # Excel 题库
-EXCEL_QUESTION_BANK_PATH = r'x.xls'
+EXCEL_QUESTION_BANK_PATH = r'6_21.xls'
 
 # TXT 题库
-ANSWER_QUESTION_BANK_PATH = r'x.txt'
+ANSWER_QUESTION_BANK_PATH = r'answers.txt'
 
 # 文章 题库
-PAPER_QUESTION_BANK_PATH = r'x.txt'
+PAPER_QUESTION_BANK_PATH = r'wenzhang.txt'
 
 # 错题收集本
 WRONG_QUESTIONS_PATH = r'wrong_questions.txt'
