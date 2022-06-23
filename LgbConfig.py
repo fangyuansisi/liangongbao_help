@@ -5,16 +5,16 @@ ACCOUNT = [
 ]
 
 # Excel 题库
-EXCEL_QUESTION_BANK_PATH = r'6_21.xls'
+EXCEL_QUESTION_BANK_PATH = r'question_bank\6_21.xls'
 
 # TXT 题库
-ANSWER_QUESTION_BANK_PATH = r'answers.txt'
+ANSWER_QUESTION_BANK_PATH = r'question_bank\answers.txt'
 
 # 文章 题库
-PAPER_QUESTION_BANK_PATH = r'wenzhang.txt'
+PAPER_QUESTION_BANK_PATH = r'question_bank\wenzhang.txt'
 
 # 错题收集本
-WRONG_QUESTIONS_PATH = r'wrong_questions.txt'
+WRONG_QUESTIONS_PATH = r'question_bank\wrong_questions.txt'
 
 # 不自动安装chrome请设置这个参数
 # CHROME_CHROME_PATH = r'.wdm\drivers\chromedriver\win32\x.x.x\chromedriver.exe'
